@@ -1,5 +1,5 @@
 // import React from 'react'
-import { useEffect, useState } from "react"
+import {    useState } from "react"
 import Logo from "../Logo/Logo"
 import {NavLink} from 'react-router-dom'
 // import { useNavigate } from "react-router-dom"
@@ -73,7 +73,7 @@ function Header() {
             }        */}
             </ul>
 
-            <button className="lg:hidden mx-6 my-4" onClick={()=>setMenubar(true)}>Menu</button>
+            <button className="lg:hidden mx-6 my-4 font-medium" onClick={()=>setMenubar(true)}>Menu</button>
 
             
             </nav>
@@ -87,7 +87,7 @@ function Header() {
                 {navItems.map((item)=>
                                 item.active ? (
                                     <NavLink key={item.name} to={item.slug} onClick={()=>{setMenubar(false)}}
-                                    className="mx-6 mt-12 font-medium hover:bg-blue-300">
+                                    className="mx-6 mt-12 font-medium hover:text-[#5fc321]">
                                             {item.name}
                                     </NavLink>
                                 ) : null
@@ -95,7 +95,7 @@ function Header() {
                  {
                 authStatus &&
                 <NavLink onClick={()=>{setMenubar(false)}}>
-                    <LogoutButton className='mx-6 mt-12 hover:bg-blue-300'/>
+                    <LogoutButton className='mx-6 mt-12 hover:text-[#5fc321] font-medium'/>
                 </NavLink>
                 
             } 

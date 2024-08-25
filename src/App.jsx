@@ -8,6 +8,7 @@ import Mainpage from "./Pages/Mainpage"
 import AccountSignIn from "./Pages/AccountSignIn"
 import Registration from "./Pages/Registration"
 import NoMatch from "./Pages/NoMatch"
+import Analyze from "./Components/Analyze/Analyze"
 
 export default function App() {
   
@@ -24,6 +25,7 @@ export default function App() {
       <Route path="/login" element={<AccountSignIn/>}/>
       <Route path="/register" element={<Registration/>}/>
       {/* <Route path="/contact" element={<Contact/>}/> */}
+      <Route path="/analyze" element={<Analyze/>}/>
       <Route path="*" element={<NoMatch/>}/>
      </Routes>
    </main>
