@@ -1,12 +1,16 @@
 // import React from 'react'
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {useForm} from 'react-hook-form'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { login , } from "../../store/authSlice";
 function SingIn() {
 
     const {register , handleSubmit , formState: {errors , isSubmitting} } = useForm();
     const [view, setView] = useState("password");
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const toggleView = (e)=>{
         e.preventDefault();
@@ -21,6 +25,10 @@ function SingIn() {
     const onSubmit = async(data)=>{
         await new Promise((resolve)=>{setTimeout(resolve,1000);})
         console.log(data)
+        dispatch(login(data));
+        navigate('/')
+        
+
     }
 
     return  (
