@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { login } from '../../store/authSlice';
+import { useDispatch } from 'react-redux';
 
 function Register() {
-    const { register, handleSubmit, watch, formState: { errors, isSubmitting } } = useForm();
+    const { register, handleSubmit, watch, formState: { errors, isSubmitting  }, reset } = useForm();
     const [view, setView] = useState("password");
     const watchPassword = watch('password');
+    const dispatch = useDispatch();
+    const navigate = useNavigate()
+
+
 
     const toggleView = (e) => {
         e.preventDefault();
@@ -19,6 +25,10 @@ function Register() {
         
         await new Promise((resolve) => setTimeout(resolve, 1000));
         console.log(submissionData); // You can handle your submission here
+        dispatch(login(submissionData));
+        reset();
+        navigate('/')
+        
     };
 
     return (
@@ -83,6 +93,7 @@ function Register() {
                     <div className='w-full flex flex-row justify-between'>
                         <label htmlFor="password">Password</label>
                         <button
+                            type='button'
                             className='relative top-[28px] mr-2 z-10'
                             onClick={toggleView}
                         >

@@ -54,7 +54,7 @@ function SingIn() {
                 {errors.email && <p className="text-red-500">{errors.email.message}</p>}
 
                 <div className='w-full flex flex-row justify-between '><label htmlFor="password">Password</label>
-                <button className='relative top-[28px] mr-2 z-10' onClick={toggleView}>{view == 'password' ? <FaEyeSlash/> : <FaEye/>}</button></div>
+                <button type="button" className='relative top-[28px] mr-2 z-10' onClick={toggleView}>{view == 'password' ? <FaEyeSlash/> : <FaEye/>}</button></div>
                 <input className=' mb-2 text-md py-1 pr-[10%] w-full border-[1px] border-gray-300 outline-none focus:border-gray-500 pl-2' type={view}
                 {...register("password" , {
                     required: "Password is required",
@@ -67,7 +67,7 @@ function SingIn() {
                 )}/>
                 {errors.password && <p className="text-red-500">{errors.password.message}</p>}
                 </div>
-                <button type="submit" className='w-[100px] bg-[#5fc321] self-center px-4 py-2 rounded-lg text-white border-[1px] border-[#498722]'
+                <button type="submit"  className='w-[100px] bg-[#5fc321] self-center px-4 py-2 rounded-lg text-white border-[1px] border-[#498722]'
                 disabled={isSubmitting}>{isSubmitting? 'Loading...' : 'Login'}</button>
 
                 <p className='mb-0'>Don&apos;t have an account? <NavLink to='/register' className='underline text-blue-500'>Register</NavLink></p>
