@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './AboutUs.css';
 
 // Sample data for the team members
@@ -12,17 +12,15 @@ const teamMembers = [
 ];
 
 const AboutUs = () => {
-  const [faq, setFaq] = useState("");
+  const [faq, setFaq] = useState(<></>);
 
   useEffect(() => {
     // Load FAQ content
     setFaq(
-        <p><strong>What is FarmGuard?</strong><br /></p>
-<p><strong>How does FarmGuard work?</strong><br /></p>
-<p><strong>Who can use FarmGuard?</strong><br /></p>
-    <p><strong>How do I get started with FarmGuard?</strong><br />Sign up on our platform, upload images of your crops</p>
 
      );
+
+     console.log(faq);
   }, []);
 
   return (
@@ -54,7 +52,11 @@ const AboutUs = () => {
 
       <section>
         <h2>FAQ</h2>
-        <div id="faq" dangerouslySetInnerHTML={{ __html: faq }} />
+         <div id="faq" ><>
+        <p><strong>What is FarmGuard?</strong><br /></p>
+<p><strong>How does FarmGuard work?</strong><br /></p>
+<p><strong>Who can use FarmGuard?</strong><br /></p>
+    <p><strong>How do I get started with FarmGuard?</strong><br />Sign up on our platform, upload images of your crops</p></></div> 
       </section>
 
       <section className="blog-section">
@@ -65,7 +67,7 @@ const AboutUs = () => {
       <section className="careers-section">
         <h2>Careers</h2>
         <p>Join Us @the FarmGuard </p>
-        <a href="#">View Current Openings</a>
+        <a className='bg-[#5fc321]' href="#">View Current Openings</a>
       </section>
     </div>
   );
