@@ -9,14 +9,18 @@ import AccountSignIn from "./Pages/AccountSignIn"
 import Registration from "./Pages/Registration"
 import NoMatch from "./Pages/NoMatch"
 import Analyze from "./Components/Analyze/Analyze"
-
+// import { useContext } from "react"
+// import scrollContext from "./Context/scrollContext"
 export default function App() {
   
+  // const context = useContext(scrollContext);
+  // const navRef = context.navRef;
 
   return (
     <BrowserRouter>
     <div className="min-h-[100vh] flex flex-col">
    <ScrollContextProvider>
+   {/* <div ref={navRef}><Header/></div> */}
    <Header/>
    <main className="md:flex-grow-[1] md:flex md:flex-col md:justify-center">
      <Routes>

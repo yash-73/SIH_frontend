@@ -30,9 +30,9 @@ function Footer() {
                     </ul>
                     <ul className="sm:mx-8  max-md:my-4 flex flex-col gap-4">
                         <h3 className="text-lg font-bold">Quick links</h3>
-                        <NavLink to='/'>Home</NavLink>
-                        <NavLink to='/about'>About</NavLink>
-                        <NavLink onClick={(e)=>{
+                        <NavLink className='hover:text-[#5fc321]' to='/'>Home</NavLink>
+                        <NavLink className='hover:text-[#5fc321]' to='/about'>About</NavLink>
+                        <NavLink className='hover:text-[#5fc321]' onClick={(e)=>{
                             e.preventDefault();
                             if(location.pathname != '/'){
                                 setNeedtoScroll(true);
@@ -45,7 +45,7 @@ function Footer() {
                             }
                             
                         }}>Features</NavLink>
-                        {authStatus && <NavLink to='/analyze'>Analyze Crop</NavLink>}
+                        {authStatus && <NavLink className='hover:text-[#5fc321]' to='/analyze'>Analyze Crop</NavLink>}
                     </ul>
                     <ul className="sm:mx-8 max-md:my-4 flex flex-col gap-4">
                         <h3 className="text-lg font-bold">Support</h3>

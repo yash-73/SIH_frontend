@@ -27,9 +27,9 @@ function Mainpage() {
     })
     return (<div>
     
-    <div className={`bg-[url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-center bg-cover h-[90svh] text-center flex flex-col justify-center  items-center gap-[5%]`}>
+    <div className={`bg-[url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-center bg-cover h-[90svh] text-center flex flex-col justify-center  items-center gap-[3%]`}>
 
-<h1 className='text-white  font-bold text-3xl '>Welcome to Farm Guard</h1>
+<h1 className='text-white drop-shadow-2xl  font-bold text-3xl '>Welcome to Farm Guard</h1>
 <p className='text-white font-bold lg:text-5xl text-2xl'>Nurture your crops, ensure healthy growth!</p>
  { authStatus && <button onClick={()=>{navigate('/analyze')}} className='text-white font-bold border-2 border-white hover:scale-110 transition-all hover:bg-white hover:text-black
  w-[fit-content] px-4 py-2  rounded-md'>Analyze Crop</button>}
