@@ -1,0 +1,83 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #60c424;
+  }
+  
+  h2 {
+    border-bottom: 2px solid #2dbc2d;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .team-member {
+    margin-bottom: 20px;
+  }
+  
+  .team-member h3 {
+    margin: 0;
+    color: #60c424;
+  }
+  
+  .team-member h4 {
+    margin: 5px 0;
+    color: #1c1a1a;
+  }
+  
+  .faq p {
+    margin: 10px 0;
+  }
+  
+  .blog-section {
+    margin-top: 30px;
+  }
+  
+  .blog-section h2 {
+    color: #006400;
+  }
+  
+  .careers-section {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .careers-section a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #006400;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .careers-section a:hover {
+    background: #004d00;
+  }
