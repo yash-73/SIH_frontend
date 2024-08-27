@@ -18,9 +18,9 @@ const AboutUs = () => {
     // Load FAQ content
     setFaq(
 
-     );
+    );
 
-     console.log(faq);
+    console.log(faq);
   }, []);
 
   return (
@@ -52,11 +52,11 @@ const AboutUs = () => {
 
       <section>
         <h2>FAQ</h2>
-         <div id="faq" ><>
-        <p><strong>What is FarmGuard?</strong><br /></p>
-<p><strong>How does FarmGuard work?</strong><br /></p>
-<p><strong>Who can use FarmGuard?</strong><br /></p>
-    <p><strong>How do I get started with FarmGuard?</strong><br />Sign up on our platform, upload images of your crops</p></></div> 
+        <div id="faq" ><>
+          <p><strong>What is FarmGuard?</strong><br /></p>
+          <p><strong>How does FarmGuard work?</strong><br /></p>
+          <p><strong>Who can use FarmGuard?</strong><br /></p>
+          <p><strong>How do I get started with FarmGuard?</strong><br />Sign up on our platform, upload images of your crops</p></></div>
       </section>
 
       <section className="blog-section">
