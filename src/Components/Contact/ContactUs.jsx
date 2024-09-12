@@ -1,64 +1,90 @@
-import React, { useState } from 'react';
-import './ContactUs.css'; // Import the CSS file
+import React from 'react'
+import {useForm} from 'react-hook-form'
 
-const ContactUs = () => {
-  const [formMessage, setFormMessage] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+function ContactUs() {
 
-    const formData = new FormData(event.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
+  const { register, handleSubmit, formState: { errors, isSubmitting  }, reset } = useForm();
 
-    // Simulate sending data to the server
-    console.log('Form Data:', { name, email, subject, message });
-
-    // Display a confirmation message to the user
-    setFormMessage('Thank you for your message! We will get back to you soon.');
-
-    // Clear the form
-    event.target.reset();
-  };
-
-  return (
-    <div className="container">
-      <h1>Contact Us</h1>
-
-      <section>
-        <h2>Sub heading</h2>
-        <p>Queries</p>
-      </section>
-
-      <section className="contact-form">
-        <form id="contactForm" onSubmit={handleSubmit}>
-          <label htmlFor="name">Your Name</label>
-          <input type="text" id="name" name="name" required />
-
-          <label htmlFor="email">Your Email</label>
-          <input type="email" id="email" name="email" required />
-
-          <label htmlFor="subject">Subject</label>
-          <input type="text" id="subject" name="subject" required />
-
-          <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
-        {formMessage && <div id="formMessage" className="form-message success-message">{formMessage}</div>}
-      </section>
-
-      <section className="contact-info">
-        <h2>Contact Us</h2>
-        <p>Email: abcde@farmguard.com</p>
-        <p>Phone: 8669178247</p>
-        <p>Address: Dhanakwadi, Pune</p>
-      </section>
-    </div>
-  );
+  const onSubmit = async (data) => {
+    // Only include the password field in the submission
+    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    console.log(data); // You can handle your submission here
+    reset();
+   
+    
 };
 
-export default ContactUs;
+  return (
+    <div className='flex flex-col items-center justify-center px-4'>
+        <h2 className='text-[#009921] font-bold text-2xl my-4'>Contact Us</h2>
+      
+        <form action="submit" className='m-8 flex flex-col  items-left p-8 w-[50%] max-md:w-full rounded-2xl border-[1px] border-gray-400'
+        onSubmit={handleSubmit(onSubmit)}>
+        <label htmlFor="name">Name</label>
+                    <input
+                        id='name'
+                        className='mb-2 text-md py-1 w-full border-[1px] border-gray-300 outline-none focus:border-gray-500 pl-2'
+                        type="text"
+                        {...register("name", {
+                            required: "Enter your name",
+                            pattern: {
+                                value: /^[A-Za-z\s'-]+$/,
+                                message: 'Name can only contain letters, spaces, hyphens, and apostrophes',
+                            }
+                        })}
+                    />
+                    {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
+
+
+         <label htmlFor="email">Email</label>
+                    <input
+                        id="email"
+                        className='mb-2 text-md py-1 w-full border-[1px] border-gray-300 outline-none focus:border-gray-500 pl-2'
+                        type="text"
+                        {...register("email", {
+                            required: "Email is required",
+                            validate: (value) => value.includes("@") || "Enter valid Email"
+                        })}
+                    />
+                    {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+
+                    <label htmlFor="subject">Subject</label>
+                    <input
+                        id='subject'
+                        className='mb-2 text-md py-1 w-full border-[1px] border-gray-300 outline-none focus:border-gray-500 pl-2'
+                        type="text"
+                        {...register("subject", {
+                            required: "Enter subject",
+                            
+                        })}
+                    />
+                    {errors.subject && <p className='text-red-500'>{errors.subject.message}</p>}
+
+
+                    <label htmlFor="message">Message</label>
+                    <textarea  id="message" 
+                        className='mb-2 text-md py-1 w-full border-[1px] border-gray-300 outline-none focus:border-gray-500 pl-2'
+
+                    {...register("message" , {
+                      required: "Enter message"
+                    })}></textarea>
+                    <label htmlFor="message" className='self-end text-[10px] '>Hold and pull down to expand</label>
+
+          
+<button
+                    type='submit'
+                    disabled={isSubmitting}
+                    className='w-[100px] bg-[#5fc321] self-center my-4 px-4 py-2 rounded-lg text-white border-[1px] border-[#498722]'
+                >
+                    {isSubmitting ? 'Loading...' : 'Submit'}
+                </button>
+
+        </form>
+       
+    </div>
+  )
+}
+
+export default ContactUs

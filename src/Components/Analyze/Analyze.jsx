@@ -49,20 +49,32 @@ function Analyze() {
       .then(() => {
         setLoading(false);
         console.log("Done");
-        const tempString = `Temporary Data here:  
-          Crop Name: 
-          Predicted Disease Name: 
-          Information about the disease: 
-          Action to be taken: 
-          Preventative measures: `
-        setTempData(tempString);
+        // const tempString = `Temporary Data here:  
+        //   Crop Name: 
+        //   Predicted Disease Name: 
+        //   Information about the disease: 
+        //   Action to be taken: 
+        //   Preventative measures: `
         
-       
+        
+      
+      const div_data = (
+        <>
+         <div>Temporary Data here: </div>
+         <div>Crop Name: </div>
+         <div>Predicted Disease Name: </div>
+         <div>Information about the disease:</div>
+         <div>Action to be taken:</div>
+         <div>Preventative measures:</div>
+        </>
+      )
+
+      setTempData(div_data);
 
       });
   };
 
-  return (
+  return ( 
     <form className='flex justify-center items-center' onSubmit={handleSubmit}>
       <div className='bg-gray-200 lg:w-[85%] max-lg:w-full flex flex-col items-center justify-center p-8 m-4 rounded-2xl'>
         <div className='w-full flex lg:flex-row flex-col justify-around my-4'>

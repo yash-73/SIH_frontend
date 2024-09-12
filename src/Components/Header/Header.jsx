@@ -87,7 +87,7 @@ function Header() {
                 {navItems.map((item)=>
                                 item.active ? (
                                     <NavLink key={item.name} to={item.slug} onClick={()=>{setMenubar(false)}}
-                                    className="mx-6 mt-12 font-medium hover:text-[#5fc321]">
+                                    className="mx-6 mt-12 w-full font-medium hover:text-[#5fc321]">
                                             {item.name}
                                     </NavLink>
                                 ) : null

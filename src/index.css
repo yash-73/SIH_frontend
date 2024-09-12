@@ -2,3 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.slick-slide > div{
+    margin: 0 10px;
+}
+
+.slick-prev, .slick-next {
+    color: #5fc321; /* Change arrow color */
+    z-index: 100; 
+    font-size: 0px;/* Ensure arrows are visible */
+    transform: scale(1.5);
+
+  }
+
+  .slick-next:hover , .slick-prev:hover{
+    color: #009921;
+  }
+  .slick-prev:before, .slick-next:before {
+     /* Adjust arrow size */
+    color: #5fc321; /* Change arrow icon color */
+  }
+
